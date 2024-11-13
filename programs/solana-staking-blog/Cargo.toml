@@ -9,15 +9,17 @@ crate-type = ["cdylib", "lib"]
 name = "solana_staking_blog"
 
 [features]
+default = []
+cpi = ["no-entrypoint"]
 no-entrypoint = []
 no-idl = []
 no-log-ix-name = []
-cpi = ["no-entrypoint"]
-default = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
 
 [dependencies]
-anchor-lang = "0.27.0"
-anchor-spl = "0.27.0"
+anchor-lang = "0.30.1"
+anchor-spl = "0.30.1"
+ahash="=0.7.8"
 
 [dev-dependencies]
-solana-sdk = "1.15.2"
+solana-sdk = "1.18.15"
